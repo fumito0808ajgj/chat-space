@@ -1,0 +1,19 @@
+.side-bar
+ .side-bar-user
+  .side-bar-user-box
+   %p.side-haeder-box__username
+    フミ
+   %ul.side-header-box__icon
+    %li.side-header-box__edit
+     = link_to "#" do
+      = icon('fas', 'edit')
+    %li.side-header__box__new-group 
+     = link_to "#" do
+      = icon('fas', 'cog')
+
+ .side-bar-gruop-list
+  = link_to "#", class: "side-bar-group" do
+   %p.side-bar-group-name
+    fummi
+   %p.side-bar-group-message
+    tin
