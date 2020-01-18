@@ -37,23 +37,23 @@ $color2:#ffffff;
     }
   }
 
-  .side-bar-gruop-list{
+  .side-bar-gruop{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     width: 300px;
     padding: 20px;
 
-     .side-bar-group{
+     .side-bar-group-list{
       color: $color2;
       text-decoration: none;
       margin-bottom: 40px;
 
-      .side-bar-group-name{
+       &-list-name{
         font-size: 15px;
         margin-bottom: 5px;
       }
 
-      .side-bar-group-message{
+       &-message{
         font-size: 11px;
       }
     }
