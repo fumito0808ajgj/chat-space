@@ -1,0 +1,45 @@
+.chat-main
+ .chat-main__group-info
+  .chat-main__group-info__left-box
+   %p.chat-main__group-info__left-box__user-name
+    fhjj
+    
+   %p.chat-main__group-info__left-box__member
+    member:yamaguti
+ 
+  .chat-main__group-info__header__edit-btn
+   = link_to "#", class:"ctn-btn" do
+    Edit
+
+ .chat-main__message-list
+  .post-message
+   .message-info
+    .name
+     fumi
+    .date
+     2020/01/13(mon)21:19:20
+   .post
+    jgkj
+
+  .post-message
+   .message-info
+    .name
+     take
+    .date
+     2020/01/13(mon)21:24:20
+   .post
+    kgkns
+
+  
+
+ .form
+  %form.new-message
+   .input-form
+    %input{type:"text", class:"type-message", placehplder:"type a message"}
+    %label{class: "input-box__image"}
+     = icon('fas', 'image')
+     %input{type: "file", class: "input-box"}
+   %input{type: "submit", class: "submit-btn"}
+
+   
+   
