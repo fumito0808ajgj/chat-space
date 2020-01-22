@@ -5,15 +5,19 @@
     フミ
    %ul.side-header-box__icon
     %li.side-header-box__edit
-     = link_to "#" do
+     = link_to "/users/edit" do   
       = icon('fas', 'edit')
     %li.side-header__box__new-group 
-     = link_to "#" do
+     = link_to "/groups/new" do
       = icon('fas', 'cog')
 
  .side-bar-gruop
-  = link_to "#", class: "side-bar-group-list" do
-   %p.side-bar-group-list-name
-    fummi
-   %p.side-bar-group-list-message
-    tin
+  - current_user.groups.each do |group|
+   = link_to "#", class: "side-bar-group-list" do
+    %p.side-bar-group-list-name
+     fummi
+    %p.side-bar-group-list-message
+     tin
+
+
+  
