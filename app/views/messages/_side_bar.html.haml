@@ -15,9 +15,9 @@
   - current_user.groups.each do |group|
    = link_to "/groups/#{group.id}/messages", class: "side-bar-group-list" do
     %p.side-bar-group-list-name
-     fummi
+     = group.name
     %p.side-bar-group-list-message
-     tin
+     = group.show_last_message
 
 
   

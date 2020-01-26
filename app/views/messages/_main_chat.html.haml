@@ -2,13 +2,15 @@
  .chat-main__group-info
   .chat-main__group-info__left-box
    %p.chat-main__group-info__left-box__user-name
-    fhjj
-    
-   %p.chat-main__group-info__left-box__member
-    member:yamaguti
- 
+    = @group.name 
+
+    %ul.chat-main__group-info__left-box__member
+     - @group.users.each do |user|
+      %li 
+      = user.name    
+  
   .chat-main__group-info__header__edit-btn
-   = link_to "#", class:"ctn-btn" do
+   = link_to "/groups/#{@group.id}/edit", class:"ctn-btn" do
     Edit
 
  .chat-main__message-list
