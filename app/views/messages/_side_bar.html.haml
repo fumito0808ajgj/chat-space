@@ -13,7 +13,7 @@
 
  .side-bar-gruop
   - current_user.groups.each do |group|
-   = link_to "#", class: "side-bar-group-list" do
+   = link_to "/groups/#{group.id}/messages", class: "side-bar-group-list" do
     %p.side-bar-group-list-name
      fummi
     %p.side-bar-group-list-message

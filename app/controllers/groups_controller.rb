@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   
-  def idex
+  def index
   end
 
   def new
