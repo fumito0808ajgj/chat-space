@@ -50,10 +50,7 @@ $('#new_message').on('submit', function(e){
       dataType: 'json',
       processData: false,
       contentType: false
-    })
-     .done(function(data){
-       var html = buildHTML(data);
-       console.log(html);
+
        $('.chat-main__message-list').append(html);
        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight}); 
        $('.submit-btn').prop("disabled", false);     
