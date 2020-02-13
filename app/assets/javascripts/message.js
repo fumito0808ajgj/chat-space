@@ -100,7 +100,9 @@ $('#new_message').on('submit', function(e){
        });
     };   
 
-  
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    console.log("0")
+    setInterval(reloadMessages, 7000);
   }
 
     
