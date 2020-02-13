@@ -82,6 +82,7 @@ $('#new_message').on('submit', function(e){
   })
   .fail(function() {
     console.log('error');
+    alert("メッセージ送信に失敗しました");
   });
 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
