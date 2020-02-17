@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       format.html
       format.json
     end
-  end
+   end
   end
 
   def update
