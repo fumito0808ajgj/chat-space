@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       format.json
     end
    end
-  end
+  
 
   def update
     if current_user.update(user_params)
