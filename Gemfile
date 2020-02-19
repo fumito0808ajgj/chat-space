@@ -77,3 +77,4 @@ gem 'mini_magick'
 gem 'rails-i18n'
 gem 'devise'
 gem "jquery-rails"
+gem 'fog-aws'
