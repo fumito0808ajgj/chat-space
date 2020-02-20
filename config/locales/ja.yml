@@ -107,12 +107,6 @@ ja:
       month: 月
       year: 年
   errors:
-    models:
-      message:
-        attributes:
-          content:
-            blank: を入力してください 
-
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
