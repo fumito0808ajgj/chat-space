@@ -2,7 +2,7 @@
  .side-bar-user
   .side-bar-user-box
    %p.side-haeder-box__username
-    フミ
+    = current_user.name
    %ul.side-header-box__icon
     %li.side-header-box__edit
      = link_to "/users/edit" do   
