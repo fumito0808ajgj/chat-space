@@ -1,17 +1,17 @@
-$(function(){ 
+$(function(){
   var buildHTML = function(message) {
     if (message.content && message.image) {
       //data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="upper-message__user-name">` +
+      var html = `<div class="post-message" data-message-id=` + message.id + `>` +
+        `<div class="message-info">` +
+          `<div class="name">` +
             message.user_name +
           `</div>` +
-          `<div class="upper-message__date">` +
+          `<div class="date">` +
             message.created_at +
           `</div>` +
         `</div>` +
-        `<div class="lower-message">` +
+        `<div class="post">` +
           `<p class="lower-message__content">` +
             message.content +
           `</p>` +
@@ -20,16 +20,16 @@ $(function(){
       `</div>`
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="upper-message__user-name">` +
+      var html = `<div class="post-message" data-message-id=` + message.id + `>` +
+        `<div class="message-info">` +
+          `<div class="name">` +
             message.user_name +
           `</div>` +
-          `<div class="upper-message__date">` +
+          `<div class="date">` +
             message.created_at +
           `</div>` +
         `</div>` +
-        `<div class="lower-message">` +
+        `<div class="post">` +
           `<p class="lower-message__content">` +
             message.content +
           `</p>` +
@@ -37,16 +37,16 @@ $(function(){
       `</div>`
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="upper-message__user-name">` +
+      var html = `<div class="post-message" data-message-id=` + message.id + `>` +
+        `<div class="message-info">` +
+          `<div class="name">` +
             message.user_name +
           `</div>` +
-          `<div class="upper-message__date">` +
+          `<div class="date">` +
             message.created_at +
           `</div>` +
         `</div>` +
-        `<div class="lower-message">` +
+        `<div class="post">` +
           `<img src="` + message.image + `" class="lower-message__image" >` +
         `</div>` +
       `</div>`
@@ -76,8 +76,11 @@ $('#new_message').on('submit', function(e){
       alert("メッセージ送信に失敗しました");
      });
  })
+
+
  var reloadMessages = function() {
-  last_message_id = $('.message:last').data("message-id");
+  last_message_id = $('.post-message:last').data("message-id");
+  console.log(last_message_id);
   $.ajax({
     url: "api/messages",
     type: 'get',
@@ -98,10 +101,10 @@ $('#new_message').on('submit', function(e){
     alert("メッセージ送信に失敗しました");
   });
 
+};
+  
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
 
   };
-
- };
 });
